@@ -30,10 +30,10 @@
 * **Solution:** 클라이언트 단에서 데이터 타입을 검증하고 DB 구조에 맞게 변환(Transform)하는 **전처리 레이어(Pre-processing Layer)** 구현.
 * **Result:** 수동 가공 없이도 데이터 정합성을 유지하며, 업로드 성공률 및 업무 효율 개선.
 
-#### 3. Data-Driven UX Engineering
-* **Problem:** 기존 고딕체(Noto Sans) 사용 시, 복잡한 숫자 데이터가 많은 대시보드 환경에서 시인성 저하 발생.
-* **Solution:** 숫자 가독성에 최적화된 **Pretendard** 폰트로 마이그레이션 및 타이포그래피 위계(Hierarchy) 재정립.
-* **Result:** 운영자 피드백 기준, 핵심 수치 데이터의 **가독성과 정보 전달력 개선** 확인.
+#### 3. Scalable Component Architecture
+* **Problem:** 반복되는 위젯과 카드 UI를 매번 새로 구현함에 따라 **코드 중복(Redundancy)**이 발생하고, 스타일 변경 시 수정 범위가 넓어지는 비효율 발생.
+* **Solution:** 공통 UI 요소를 식별하여 **Props 기반의 재사용 가능한 컴포넌트**로 추상화하고, **TypeScript Interface**로 타입 안정성(Type Safety) 확보.
+* **Result:** 신규 대시보드 화면 구성 시 **개발 생산성 향상** 및 일관된 디자인 시스템 적용으로 수정 대응력 강화.
 
 ---
 
