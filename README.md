@@ -1,44 +1,46 @@
-# Front-end Developer (React / TypeScript)
+# 👨‍💻 [김민이] | Front-end Developer
+### "데이터 기반 대시보드 설계와 실무 표준을 지향하는 프론트엔드 개발자"
 
-UI/UX 디자인 및 퍼블리싱 경험을 기반으로 **실무 표준과 유지보수성**을 최우선으로 고려하는 프론트엔드 개발자입니다.
-감보다는 논리에 기반한 코드 작성, 명확한 아키텍처 설계를 지향합니다.
+퍼블리셔 및 UI/UX 디자이너 출신으로, **사용자 경험(UX)과 데이터 엔지니어링의 접점**을 이해하는 개발자입니다.
+단순한 UI 구현을 넘어, 복잡한 데이터를 시각화하는 **대시보드 설계**와 유지보수 가능한 **아키텍처 구축**에 주력합니다.
 
 ---
 
 ### 🛠 Tech Stack
 
-| Category | Stacks |
-| --- | --- |
-| **Core** | ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white) |
-| **Design & Styling** | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white) (BEM Methodology, CSS Variables) |
-| **Backend & Tools** | ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white) |
+| Category | Stacks & Proficiency |
+| :--- | :--- |
+| **Core** | <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB"/> **Functional Components, Custom Hooks, Optimization**<br><img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white"/> **Strict Mode 기반 타입 설계 및 안정성 확보** |
+| **Styling** | <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=figma&logoColor=white"/> **BEM Methodology, CSS Variables, Responsive Layout** |
+| **Backend & Tools** | <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat&logo=supabase&logoColor=white"/> <img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white"/> <img src="https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white"/> **Git Flow 준수, Issue/PR 관리** |
 
 ---
 
-### 🚀 Key Project
+### 📂 Key Project: BEMS 3D Dashboard
+> **건물 에너지 관리 시스템(BEMS) 실시간 관제 대시보드**
+> *기술 스택: React, TypeScript, Supabase, CSS Variables(vmin)*
 
-#### **BEMS 3D Dashboard (건물 에너지 관리 시스템)**
-> *Supabase 기반의 데이터 연동 및 One-Page 대시보드 구축*
+#### 1. Resolution-Independent Layout 설계 (`vmin`)
+* **Problem:** 다양한 해상도(대형 관제 모니터, 태블릿 등) 환경에서 단일 화면(One-Page) 대시보드의 레이아웃이 틀어지는 문제.
+* **Solution:** 픽셀(px) 기반이 아닌 Viewport Unit(`vmin`)을 활용한 **Fluid Layout System** 설계.
+* **Result:** 주요 해상도(4:3, 16:9, Ultra-wide) 환경에서 **UI 깨짐 없는 레이아웃 안정성** 확보.
 
-**1. One-Page Dashboard Architecture (`vmin` Layout)**
-* **문제:** 스크롤 없이 **단일 화면(One-Page)**에 모든 에너지 흐름 데이터를 표출해야 했으나, 모니터 비율(4:3, 16:9, 와이드)에 따라 레이아웃이 깨지거나 잘리는 문제 발생.
-* **해결:** Viewport Unit(`vmin`)을 기반으로 한 **Fluid Layout** 시스템을 설계하여, 단순 크기 조절이 아닌 **화면 비율에 따른 완벽한 스케일링** 구현.
-* **성과:** 대형 관제 모니터부터 노트북까지, 모든 해상도에서 **정보 밀도(Density)와 가독성**이 유지되는 UI 구축.
+#### 2. Client-side Data Pre-processing Layer 구축
+* **Problem:** 현장의 비표준화된 CSV 데이터와 DB 스키마 간의 불일치로 인한 데이터 로드 실패.
+* **Solution:** 클라이언트 단에서 데이터 타입을 검증하고 DB 구조에 맞게 변환(Transform)하는 **전처리 레이어(Pre-processing Layer)** 구현.
+* **Result:** 수동 가공 없이도 데이터 정합성을 유지하며, 업로드 성공률 및 업무 효율 개선.
 
-**2. Data Integration & Logic (Supabase + CSV)**
-* **Supabase 활용:** Supabase를 도입하여 관계형 테이블을 설계하고, 클라이언트와 실시간 데이터 연동 환경 구축.
-* **데이터 정합성 확보:** DB 스키마와 현장 엑셀(CSV) 양식이 다른 문제를 해결하기 위해, 업로드 시 **클라이언트 단에서 데이터를 파싱(Parsing) 및 전처리**하여 DB 구조에 맞게 매핑하는 미들웨어 로직 구현.
-
-**3. UX Engineering & State Handling**
-* **디자인/개발 통합 역량:** UI/UX 디자인 경험을 살려 단순히 "동작하는 화면"이 아닌, 사용자의 모든 시나리오를 고려한 인터페이스 설계.
-* **상태별 UI(State UI) 대응:** Happy Path뿐만 아니라 `Loading`, `Error`, `Empty`, `Partial Data` 등 다양한 엣지 케이스에 대한 대응 UI를 시스템화하여 사용자 경험(UX) 완성도 제고.
-* **가독성 개선:** 데이터 대시보드의 핵심인 '숫자 가독성'을 위해 시스템 폰트를 Noto Sans에서 **Pretendard**로 마이그레이션하고 타이포그래피 계층 구조 재정립.
+#### 3. Data-Driven UX Engineering
+* **Problem:** 기존 고딕체(Noto Sans) 사용 시, 복잡한 숫자 데이터가 많은 대시보드 환경에서 시인성 저하 발생.
+* **Solution:** 숫자 가독성에 최적화된 **Pretendard** 폰트로 마이그레이션 및 타이포그래피 위계(Hierarchy) 재정립.
+* **Result:** 운영자 피드백 기준, 핵심 수치 데이터의 **가독성과 정보 전달력 개선** 확인.
 
 ---
 
-### 🎯 Current Focus
-* **상태 관리 패턴 정립:** 단순 UI State와 서버 데이터(Server State)의 효율적인 분리 및 관리.
-* **Clean Code:** 선언적 프로그래밍을 통한 가독성 높은 코드 작성 및 컴포넌트 재사용성 극대화.
+### 🎯 Professional Focus & Growth
+* **State Management:** Server State(데이터)와 Client State(UI)를 분리하여 불필요한 리렌더링 최소화 및 성능 최적화.
+* **Scalable Architecture:** 컴포넌트 재사용성을 높이는 Atomic 패턴 연구 및 선언적 코드 작성 지향.
+* **Clean Code:** 협업을 고려한 명확한 네이밍 컨벤션 준수와 코드 가독성 확보.
 
 ---
 
